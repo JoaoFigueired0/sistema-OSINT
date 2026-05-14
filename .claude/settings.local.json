@@ -12,7 +12,10 @@
       "PowerShell(ls *)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(Get-ChildItem -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(dir C:\\\\Users\\\\João Victor\\\\Downloads\\\\DEV\\\\Busca Inteligente De Dados *)"
     ]
   }
 }
