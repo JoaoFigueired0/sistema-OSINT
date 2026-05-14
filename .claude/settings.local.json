@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\João Victor\\\\Downloads\\\\DEV\\\\AI\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\João Victor\\\\Downloads\\\\DEV\\\\AI\\\\caveman\" -File | Where-Object {$_.Name -match \"README|CLAUDE|package.json\"})",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\João Victor\\\\Downloads\\\\DEV\\\\sistema-OSINT_Front\" -Recurse -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "PowerShell(tree \"C:\\\\Users\\\\João Victor\\\\Downloads\\\\DEV\\\\sistema-OSINT_Front\" -L 3)",
+      "PowerShell(ls *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl *)"
+    ]
+  }
+}

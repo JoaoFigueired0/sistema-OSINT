@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080c14;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080c14;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a2a42;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+  }
+
+  ::selection {
+    background: rgba(6, 182, 212, 0.3);
+    color: #22d3ee;
+  }
+}
+
+@layer components {
+  /* Card base */
+  .cyber-card {
+    @apply bg-bg-secondary border border-border rounded-lg p-6 transition-all duration-300;
+  }
+
+  .cyber-card:hover {
+    @apply border-cyan-dark;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+  }
+
+  /* Glow text */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Input styling */
+  .cyber-input {
+    @apply w-full bg-bg-primary border border-border rounded-lg px-4 py-3 text-text-primary font-mono text-sm;
+    @apply focus:outline-none focus:border-cyan focus:ring-1 focus:ring-cyan;
+    @apply placeholder:text-text-muted transition-all duration-200;
+  }
+
+  .cyber-input:focus {
+    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.3), 0 0 15px rgba(6, 182, 212, 0.1);
+  }
+
+  /* Button */
+  .cyber-btn {
+    @apply flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bg-primary;
+  }
+
+  .cyber-btn-primary {
+    @apply cyber-btn bg-cyan text-bg-primary;
+    @apply hover:bg-cyan-bright focus:ring-cyan;
+  }
+
+  .cyber-btn-primary:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  }
+
+  .cyber-btn-secondary {
+    @apply cyber-btn bg-transparent border border-cyan text-cyan;
+    @apply hover:bg-cyan hover:text-bg-primary focus:ring-cyan;
+  }
+
+  .cyber-btn-purple {
+    @apply cyber-btn bg-purple text-white;
+    @apply hover:bg-purple-bright focus:ring-purple;
+  }
+
+  .cyber-btn-purple:hover {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold font-mono;
+  }
+
+  .badge-success {
+    @apply badge bg-success/10 text-success border border-success/20;
+  }
+
+  .badge-danger {
+    @apply badge bg-danger/10 text-danger border border-danger/20;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .badge-cyan {
+    @apply badge bg-cyan/10 text-cyan border border-cyan/20;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple/10 text-purple border border-purple/20;
+  }
+
+  .badge-muted {
+    @apply badge bg-bg-tertiary text-text-secondary border border-border;
+  }
+
+  /* Data row */
+  .data-row {
+    @apply flex items-start justify-between gap-4 py-3 border-b border-border last:border-0;
+  }
+
+  .data-label {
+    @apply text-text-secondary text-sm font-medium min-w-0 flex-shrink-0;
+  }
+
+  .data-value {
+    @apply text-text-primary text-sm font-mono text-right min-w-0 break-all;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-xs font-semibold tracking-widest uppercase text-cyan mb-4;
+  }
+
+  /* Alert */
+  .alert-error {
+    @apply flex items-start gap-3 p-4 rounded-lg bg-danger/10 border border-danger/30 text-danger;
+  }
+
+  .alert-warning {
+    @apply flex items-start gap-3 p-4 rounded-lg bg-warning/10 border border-warning/30 text-warning;
+  }
+
+  .alert-info {
+    @apply flex items-start gap-3 p-4 rounded-lg bg-cyan/10 border border-cyan/30 text-cyan;
+  }
+
+  /* Sidebar nav link */
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary text-sm font-medium;
+    @apply transition-all duration-200 cursor-pointer;
+  }
+
+  .nav-link:hover {
+    @apply bg-bg-tertiary text-text-primary;
+  }
+
+  .nav-link.active {
+    @apply bg-cyan/10 text-cyan border-l-2 border-cyan;
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+  }
+
+  /* Result card */
+  .result-card {
+    @apply cyber-card animate-slide-up;
+  }
+
+  /* Grid background pattern */
+  .grid-bg {
+    background-image: linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+/* Scan line animation overlay */
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.2); }
+}
+
+/* Terminal cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '_';
+  animation: cursor-blink 1s step-end infinite;
+  color: #06b6d4;
+}
+
+/* Neon border glow */
+.border-glow-cyan {
+  border-color: #06b6d4;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.4), inset 0 0 8px rgba(6, 182, 212, 0.05);
+}
+
+.border-glow-purple {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.4), inset 0 0 8px rgba(139, 92, 246, 0.05);
+}
+
+/* Hex pattern for sidebar */
+.sidebar-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(6, 182, 212, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Number counter animation */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-anim {
+  animation: count-up 0.5s ease-out forwards;
+}
